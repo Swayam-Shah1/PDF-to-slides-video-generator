@@ -33,9 +33,6 @@ ENV/
 *.swo
 
 # Project specific
-output/*
-!output/.gitkeep
-temp/
 tmp/
 *.log
 
