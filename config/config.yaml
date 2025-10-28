@@ -1,0 +1,60 @@
+# Visual Explanation Prototype Configuration
+
+input:
+  validate_format: true
+
+extraction:
+  library: "pdfplumber"  # Options: pdfplumber, pypdf2, pdfminer
+  extract_tables: false
+  preserve_formatting: true
+
+analysis:
+  max_slides: 10
+  min_slides: 6
+  keyphrase_count: 10
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  similarity_threshold: 0.7
+
+summarization:
+  method: "extractive"  # Options: extractive, abstractive
+  max_title_words: 20
+  max_bullet_words: 15
+  max_speaker_words: 25
+  bullet_count: 2
+
+visuals:
+  strategy: "simple_generation"  # Options: icon_library, simple_generation
+  icon_path: "assets/icons"
+  image_width: 800
+  image_height: 600
+  background_color: "#E8F4F8"
+
+slides:
+  aspect_ratio: "16:9"
+  theme: "modern"
+  title_font: "Calibri"
+  content_font: "Calibri"
+  title_font_size: 44
+  content_font_size: 18
+
+video:
+  output_format: "mp4"  # Options: mp4, gif
+  fps: 30
+  resolution:
+    width: 1920
+    height: 1080
+  min_slide_duration: 5  # seconds
+  max_slide_duration: 12  # seconds
+  transition_duration: 0.5  # seconds
+  ken_burns_enabled: true
+  tts_provider: "pyttsx3"  # Options: pyttsx3, cloud
+  tts_rate: 150
+  background_music_path: "assets/music/background.wav"  # Optional
+  music_volume: 0.2
+
+output:
+  directory: "output"
+  slides_filename: "slides.pptx"
+  video_filename: "video.mp4"
+  cleanup_temp_files: true
+
